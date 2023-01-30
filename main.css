@@ -1,0 +1,225 @@
+/* CSS RESET */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* -x-x- */
+
+/* BASE STYLE */
+
+:root {
+  --ff-1: 'Montserrat',sans-serif;
+  --ff-2: 'Fraunces',sans-serif;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --base-fsize: 14px;
+  --clr-primary-dark: hsl(158, 36%, 37%);
+  --clr-primary-light: hsl(30, 38%, 92%);
+  --clr-neutral-darker: hsl(212, 21%, 14%);
+  --clr-neutral-dark: hsl(228, 12%, 48%);
+  --clr-neutral-light: hsl(0, 0%, 100%);
+}
+
+/* config */
+:root {
+  --card-maxw-mobile: 34rem;
+  --card-maxw-desktop: 58rem;
+  --card-minw: 32.6rem;
+  --card-padding-mobile: 2.1rem 2.3rem;
+  --card-padding-desktop: 3rem 2.6rem;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-weight: 700;
+  font-style: normal;
+  src: url("assets/Fraunces9pt-Bold.woff2") format("woff2");
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+html {
+  font-family: var(--ff-1);
+  font-size: 62.5%;
+  font-weight: var(--fw-medium);
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+body {
+  font-size: var(--base-fsize);
+  background-color: var(--clr-primary-light);
+  padding: 4rem .8rem;
+  color: var(--clr-neutral-dark);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/* -x-x- */
+
+/* COMPONENTS */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-neutral-light);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: var(--card-maxw-mobile);
+  min-width: var(--card-minw);
+}
+
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding-mobile);
+}
+
+h3.product-tag {
+  font-weight: var(--fw-medium);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+}
+
+h1.product-title {
+  font-family: var(--ff-2);
+  color: var(--clr-neutral-darker);
+  font-weight: var(--fw-bold);
+  font-size: 3.2rem;
+  line-height: 1em;
+  margin-top: 1.2rem;
+}
+
+p.product-description {
+  font-weight: var(--fw-medium);
+  font-size: inherit;
+  margin-top: 1.8rem;
+  line-height: 1.6em;
+}
+
+.product-price-wrapper {
+  display: flex;
+  column-gap: 1.6rem;
+  align-items: center;
+  margin-top: 1.8rem;
+  margin-bottom: 1.6rem;
+  word-break: break-word;
+  flex-wrap: wrap;
+}
+
+h2.product-price {
+  font-family: var(--ff-2);
+  color: var(--clr-primary-dark);
+  font-size: 3.2rem;
+  font-weight: var(--fw-bold);
+}
+
+p.product-discount {
+  text-decoration: line-through;
+  margin-top: .5em;
+}
+
+button.product-to-cart {
+  margin-top: auto;
+  width: 100%;
+  color: var(--clr-neutral-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .6em;
+  outline: none;
+  border: 2px solid transparent;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  column-gap: 1rem;
+  font-weight: var(--fw-medium);
+  font-family: var(--ff-1);
+  cursor: pointer;
+  transition: background-color .2s ease;
+  background-color: var(--clr-primary-dark);
+}
+
+button.product-to-cart:link,
+button.product-to-cart:visited {
+  background-color: var(--clr-primary-dark);
+  border: 2px solid transparent;
+}
+
+button.product-to-cart:focus {
+  border: 2px solid var(--clr-neutral-darker);
+}
+
+button.product-to-cart:active {
+  background-color: var(--clr-neutral-darker);
+  border: 2px solid transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.product-to-cart img {
+  margin-bottom: .18em;
+}
+
+.product-to-cart span {
+  font-weight: inherit;
+}
+
+/* -x-x- */
+
+/* DESKTOP */
+@media (min-width: 567px){
+  .card {
+    flex-direction: row;
+    max-width: var(--card-maxw-desktop);
+  }
+  .card > * {
+    width: 50%;
+  }
+  .card picture img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .card-detail {
+    padding: var(--card-padding-desktop);
+  }
+
+  h1.product-title {
+    margin-top: 1.4rem;
+  }
+
+  p.product-description {
+    margin-top: 2.4rem;
+  }
+
+  .product-price-wrapper {
+    margin-top: 2rem;
+  }
+
+  button.product-to-cart:hover {
+    background-color: var(--clr-neutral-darker);
+  }
+}
