@@ -17,11 +17,9 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 /* -x-x- */
 
 /* BASE STYLE */
-
 :root {
   --ff-1: 'Montserrat',sans-serif;
   --ff-2: 'Fraunces',sans-serif;
@@ -51,14 +49,6 @@ img {
   src: url("assets/Fraunces9pt-Bold.woff2") format("woff2");
 }
 
-.fw-medium {
-  font-weight: 500;
-}
-
-.fw-bold {
-  font-weight: 700;
-}
-
 html {
   font-family: var(--ff-1);
   font-size: 62.5%;
@@ -76,18 +66,24 @@ body {
   display: grid;
   place-items: center;
 }
+/* -x-x- */
 
+/* UTILS */
+.no-text-selection {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */ 
+}
 /* -x-x- */
 
 /* COMPONENTS */
-
 .card {
   display: flex;
   flex-direction: column;
   background-color: var(--clr-neutral-light);
   border-radius: 1.1rem;
   overflow: hidden;
-  margin: 0 auto;
   max-width: var(--card-maxw-mobile);
   min-width: var(--card-minw);
 }
@@ -179,14 +175,13 @@ button.product-to-cart:active {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-.product-to-cart img {
+.product-to-cart .icon-cart {
   margin-bottom: .18em;
 }
 
 .product-to-cart span {
   font-weight: inherit;
 }
-
 /* -x-x- */
 
 /* DESKTOP */
@@ -223,3 +218,4 @@ button.product-to-cart:active {
     background-color: var(--clr-neutral-darker);
   }
 }
+/* -x-x- */
