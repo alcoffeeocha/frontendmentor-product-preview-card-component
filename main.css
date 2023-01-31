@@ -54,17 +54,21 @@ html {
   font-size: 62.5%;
   font-weight: var(--fw-medium);
   box-sizing: border-box;
-  min-height: 100vh;
+  height: 100%;
 }
 
 body {
   font-size: var(--base-fsize);
   background-color: var(--clr-primary-light);
-  padding: 4rem .8rem;
   color: var(--clr-neutral-dark);
-  min-height: 100vh;
+  height: 100%;
+}
+
+main {
+  padding: 4rem .8rem;
   display: grid;
   place-items: center;
+  height: 100%;
 }
 /* -x-x- */
 
