@@ -39,8 +39,8 @@
             Polge, Perfumer-Creator for the House of CHANEL.
           </p>
           <div class="product-price">
-            <h2 class="product-price-text">$149.99</h2>
-            <p class="product-price-discount no-text-selection">$169.99</p>
+            <h2>$149.99</h2>
+            <p class="no-text-selection">$169.99</p>
           </div>
           <button
             type="button"
@@ -56,6 +56,9 @@
       var addCart = document.querySelector(".js-add-cart")
       if(addCart){
         addCart.addEventListener("click",function(){
+          this.blur()
+        })
+        addCart.addEventListener("mouseleave",function(){
           this.blur()
         })
         // detect browser touch feature
